@@ -87,7 +87,9 @@ $(document).ready(function () {
         $.ajax({
             type: 'POST',
             url: '/logout',
-            data: {}
+            data: {
+                op: ''
+            }
         }).done(function (response) {
             location.reload();
         });
@@ -120,7 +122,7 @@ $(document).ready(function () {
             $('#link_imagem_field_cad').val('');
             $('#link_post_field_cad').val('');
             $('#categoria_post_field_cad').val('');
-            
+
         });
         e.preventDefault();
     });

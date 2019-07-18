@@ -96,12 +96,15 @@ function buscarPosts(type, url, data) {
 
                     form[0].innerHTML = textHTML;
                 } else {
-                    let titulo = $('.link_interno.black').text();
-                    let descricao = $('h3').text();
+                    //let titulo = $('.link_interno.black').text();
+                    //let descricao = $('h3').text();
                     //let link_img = $('img.card-img-top').attr('src');
                     //let link_post = $('a.link_interno.white').attr('href');
-                    let categoria = $('.categoria').text();
+                    //let categoria = $('.categoria').text();
                     //let data = $('.data_post').text();
+                    let titulo = form[0].querySelector('.link_interno.black').innerText;
+                    let descricao = form[0].querySelector('h3').innerText;
+                    let categoria = form[0].querySelector('.categoria').innerText;
 
                     let link_img = form[0].querySelector('.card-img-top').src;
                     let link_post = form[0].querySelector('.link_interno.white').href;
