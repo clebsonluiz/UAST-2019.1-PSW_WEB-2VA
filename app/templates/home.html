@@ -1,0 +1,22 @@
+{% extends 'cabecalho_footer.html' %}
+
+
+{% block corpo %}
+    <article>
+        <section>
+            <div id = "section" class="cards" style="margin:1em; ">
+
+            </div>
+        </section>
+    </article>
+{% endblock %}
+
+{% block end %}
+     <script src="{{ url_for('static',
+     filename = "_js/ajax_util.js") }}"></script>
+    <script src="{{ url_for('static',
+     filename = "_js/ajax_jquery_home.js") }}"></script>
+    <script src="{{ url_for('static',
+     filename = "_js/ajax_jquery_index_loader.js") }}"></script>
+    {{ super() }}
+{% endblock %}

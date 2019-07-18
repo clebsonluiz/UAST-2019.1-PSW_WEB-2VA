@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Agregador de Links Clébson Luiz</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{{ url_for('static', filename = "_css/bootstrap.min.css") }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename = "_css/estilo.css") }}">
+
+</head>
+
+<body>
+<div class="jumbotron jumbotron-fluid mb-0 bg-dark" style="padding: 2em; text-align: center;">
+    <h1 class="display-2 " style="color: white; ">
+        Agregador de links Clébson Luiz
+    </h1>
+    <p class="lead" style="color: white">
+        Links interessantes todos os dias, sempre atualizado! Veja o que os
+        usuarios acharam interessantes para compartilhar!
+    </p>
+    <hr class="my-4 mb-2 btn-light" style="color: white">
+    <p style="color: white">
+        Possui links interessantes que deseja compartilhar? cadastre-se e compartilhe com a
+        galera :)
+    </p>
+</div>
+
+
+{% block nav %}
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark sticky-top">
+        <a class="navbar-brand" href="#">Navegação</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse text-center" id="navbarText">
+            <ul class="navbar-nav ml-auto mr-auto nav-fill">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/perfil">Meus Links <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Novo Post
+                    </a>
+                    <form class="dropdown-menu p-4 ml-auto mr-auto mb-1" style="width: 400px;">
+                        <div class="form-group mb-0 cad_post_form">
+
+                            <input class="form-control mb-2" placeholder="titulo do post" type="text" id="titulo_post_field_cad">
+                            <input class="form-control mb-2" placeholder="descrição do Post" type="text" id="descricao_post_field_cad">
+                            <input class="form-control mb-2" placeholder="Link HTTP da Imagem" type="text" id="link_imagem_field_cad">
+                            <input class="form-control mb-2" placeholder="Link HTTP do Post" type="text" id="link_post_field_cad">
+                            <input class="form-control mb-2" placeholder="Categoria do Post" type="text" id="categoria_post_field_cad">
+                            <input class="form-control mb-2" placeholder="Data do Post" type="date" id="data_post_field_cad" value="2019-06-01">
+                            <button id="btn_cad_post" type="submit" class="btn btn-primary btn-block">Postar</button>
+
+                        </div>
+                    </form>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Meu Perfil
+                    </a>
+                    <form class="dropdown-menu p-0 ml-auto mr-auto mb-1" style="width: 250px;">
+                            <div class="card text-center">
+                                <div class="card-header p-0">
+                                    <div class="input-group">
+                                        <div id = "btn_deletar_perfil" name="btn_deletar_perfil" class="input-group-prepend m-0 maozinha_mouse">
+                                            <span class="input-group-text maozinha_mouse" style="color: red;">&#10006;</span>
+                                        </div>
+                                        <input name="salvar_alteracao_perfil" type="button" class="form-control btn-success disabled"
+                                            value="Salvar" aria-label="Salvar alterações">
+                                        <div id="btn_editar_perfil" onmouseover="" name="btn_editar_perfil" class="input-group-append m-0 maozinha_mouse">
+                                            <span class="input-group-text maozinha_mouse" style="color: blue;">&#9998;</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-body">
+                                    <h5 class="card-title">Meu Perfil</h5>
+                                        <div class="form-group mb-0 formulario_login">
+                                            <label name = "nome" for="">Nome: </label><br>
+                                            <label name = "login" for="">Login: </label><br>
+                                        </div>
+                                    </div>
+                                <div class="card-footer">
+                                    <div class="input-group">
+                                        <input  type="button" class="form-control btn-danger disabled"
+                                            value="Mudar Senha" aria-label="Salvar alterações">
+                                        <div id = "editar_senha" name="editar_senha" class="input-group-append m-0 maozinha_mouse">
+                                            <span name="editar_senha" class="input-group-text editar_senha maozinha_mouse" style="color: greenyellow;">&#9998;</span>
+                                        </div>
+                                    </div>
+                                    <div class="form-group mb-0 formulario_senha">
+
+                                    </div>
+                                </div>
+                            </div>
+                        <button id = "btn_sair" name = "sair" class="dropdown-item" type="button">Sair</button>
+                    </form>
+                </li>
+                <li>
+                    <div class="input-group mb-0">
+                        <input id="data_campo" type="date" class="form-control" placeholder="Recipient's username"
+                            aria-label="Recipient's username" aria-describedby="button-addon2">
+                        <div class="input-group-append">
+                            <button class="btn btn-outline-secondary" type="button" id="bt_busca_data_index">Buscar Por data</button>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+{% endblock %}
+
+
+{% block corpo %}
+{% endblock %}
+
+{% block js %}
+    {#    <script src="../static/_js/jquery-3.3.1.slim.min.js"></script>#}
+    {#    <script src="../static/_js/bootstrap.min.js"></script>#}
+    {#    <script src="../static/_js/popper.min.js"></script>#}
+
+    <script src="{{ url_for('static',
+     filename = "_js/jquery-3.4.1.min.js") }}"></script>
+    <script src="{{ url_for('static',
+     filename = "_js/bootstrap.min.js") }}"></script>
+    <script src="{{ url_for('static',
+     filename = "_js/popper.min.js") }}"></script>
+
+{% endblock %}
+
+{% block end %}
+    </body>
+    </html>
+{% endblock %}

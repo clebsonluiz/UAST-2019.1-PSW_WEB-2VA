@@ -1,0 +1,117 @@
+/*O conteudo geral*/
+div.div_interna{
+    margin-bottom: 20px;
+    margin-top: 0px;
+    display: none;
+    width: 250px;
+    float: right;
+    background-color: #FFFFF0;
+    padding: 10px;
+    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+}
+
+div.div_interna h3{
+    margin: 0px;
+    text-align: center;
+   font-size: 16pt;
+   color: gainsboro;
+   padding: 5px;
+   text-shadow: 1px 2px 2px #414146;
+}
+.menu{
+	width: 920px;
+    height: 60px;
+    background: #414146;
+    float: left;
+    z-index: 9999;
+    margin: 0px 0px 10px -10px;
+    position: relative;
+}
+
+.div_menu{
+    width: 920px;
+    height: 60px;
+    margin: 0px;
+}
+
+.div_menu ul{
+    margin: 0px;
+    width: 90%;
+    height: 60px;
+    float: none;
+}
+
+.div_menu ul li{
+    padding: 0px;
+    list-style: none;
+    float: left;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.div_menu ul li div.li_item{
+    width: 80px;
+    padding: 21px 35px;
+    margin: 0px;
+    list-style: none;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+}
+
+.div_interna{
+    margin-left: -60px;
+    position: absolute;
+}
+
+#cad_post{
+    background: #414146;
+}
+
+.div_menu ul li div.li_item:hover{
+    background-color: #FFFFF0;
+    transition: all 0.3s;
+    color: #414146;
+    cursor: pointer;
+}
+
+
+
+div.conteudo_lateral{
+    margin-bottom: 20px;
+    margin-right: -10px;
+    margin-top: -20px;
+    display: block;
+    width: 250px;
+    background-color: #414146;
+    padding: 10px;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    float: right;
+}
+
+div.conteudo_lateral h3{
+    margin: 0px;
+    text-align: center;
+    font-size: 16pt;
+    color: gainsboro;
+    padding: 5px;
+    text-shadow: 1px 2px 2px #414146;
+}
+
+div.conteudo_lateral div_editar.div_editar_perfil{
+    color: aqua;
+    font-size: 18pt;
+    float: right;
+    padding:0px;
+    padding-bottom: 10px;
+    margin: 0px;
+    margin-bottom: 10px;
+    margin-top: -10px;
+    margin-left: -20px;
+    
+}
